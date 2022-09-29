@@ -19,8 +19,9 @@ class Dacon(srdata.SRData):
         list_lr = [[] for _ in self.scale]
 
         for filename in os.listdir(self.dir_hr):
-            list_hr[self.scale-1].append(os.path.join(self.dir_hr,filename))
-            list_lr[self.scale-1].append(os.path.joint(self.dir_lr,filename))
+            list_hr.append(os.path.join(self.dir_hr,filename))
+            for si, s in enumerate(self.scale):
+                list_lr[si].append(os.path.joint(self.dir_lr,filename))
         
         return list_hr, list_lr
 
