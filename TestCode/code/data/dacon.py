@@ -12,7 +12,7 @@ import torch.utils.data as data
 class Dacon(srdata.SRData):
     def __init__(self, args, train=True):
         super(Dacon, self).__init__(args, train)
-        self.repeat = args.test_every // (args.n_train // args.batch_size)
+        self.repeat = args.test_every // (len(self.images_hr) // args.batch_size)
 
     def _scan(self):
         list_hr = []
