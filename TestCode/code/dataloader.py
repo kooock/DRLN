@@ -8,7 +8,7 @@ from torch.utils.data import SequentialSampler
 from torch.utils.data import RandomSampler
 from torch.utils.data import BatchSampler
 from torch.utils.data import _utils
-from torch.utils.data.dataloader import _DataLoaderIter
+from torch.utils.data.dataloader import DataLoaderIter
 
 from torch.utils.data._utils import collate
 from torch.utils.data._utils import signal_handling
@@ -65,7 +65,7 @@ def _ms_loop(dataset, index_queue, data_queue, done_event, collate_fn, scale, se
     except KeyboardInterrupt:
         pass
 
-class _MSDataLoaderIter(_DataLoaderIter):
+class _MSDataLoaderIter(DataLoaderIter):
 
     def __init__(self, loader):
         self.dataset = loader.dataset
