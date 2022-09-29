@@ -26,7 +26,7 @@ class Dacon(srdata.SRData):
         return list_hr, list_lr
 
     def _set_filesystem(self, dir_data):
-        data_dir = 'open/train' if self.train else 'open/val'
+        data_dir = 'dacon/train' if self.train else 'dacon/val'
         self.apath = os.path.join(dir_data,data_dir) 
         self.dir_hr = os.path.join(self.apath, 'hr')
         self.dir_lr = os.path.join(self.apath, 'lr')
